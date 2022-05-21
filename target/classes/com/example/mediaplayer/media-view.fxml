@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fitHeight="200.0" fitWidth="200.0" />
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Slider prefHeight="21.0" prefWidth="115.0">
+                     <padding>
+                        <Insets right="7.0" top="7.0" />
+                     </padding>
+                  </Slider>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="chooseFile">
+                           <HBox.margin>
+                              <Insets left="7.0" right="7.0" top="7.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Play">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Pause">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Stop">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="&lt;&lt;&lt;">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="&gt;&gt;&gt;">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="-10s">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="+10s">
+                           <HBox.margin>
+                              <Insets right="7.0" top="7.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Button>
+                        <Slider prefHeight="21.0" prefWidth="115.0">
+                           <padding>
+                              <Insets right="7.0" top="7.0" />
+                           </padding>
+                        </Slider>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
