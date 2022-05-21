@@ -9,27 +9,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mediaplayer.MediaController">
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <MediaView fitHeight="200.0" fitWidth="200.0" />
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
             <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="BOTTOM_CENTER">
                <children>
-                  <Slider prefHeight="21.0" prefWidth="115.0">
+                  <Slider fx:id="slider" prefHeight="21.0" prefWidth="115.0">
                      <padding>
                         <Insets right="7.0" top="7.0" />
                      </padding>
                   </Slider>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="chooseFile">
+                        <Button mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="103.0" text="chooseFile">
                            <HBox.margin>
                               <Insets left="7.0" right="7.0" top="7.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Play">
+                        <Button mnemonicParsing="false" onAction="#play" prefHeight="25.0" prefWidth="50.0" text="Play">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -37,7 +36,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Pause">
+                        <Button mnemonicParsing="false" onAction="#pause" prefHeight="25.0" prefWidth="50.0" text="Pause">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -45,7 +44,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Stop">
+                        <Button mnemonicParsing="false" onAction="#stop" prefHeight="25.0" prefWidth="50.0" text="Stop">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -53,7 +52,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="&lt;&lt;&lt;">
+                        <Button mnemonicParsing="false" onAction="#slowRate" prefHeight="25.0" prefWidth="50.0" text="&lt;&lt;&lt;">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -61,7 +60,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="&gt;&gt;&gt;">
+                        <Button mnemonicParsing="false" onAction="#fastForward" prefHeight="25.0" prefWidth="50.0" text="&gt;&gt;&gt;">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -69,7 +68,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="-10s">
+                        <Button mnemonicParsing="false" onAction="#goBack10Sec" prefHeight="25.0" prefWidth="50.0" text="-10s">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -77,7 +76,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="+10s">
+                        <Button mnemonicParsing="false" onAction="#goForward10Sec" prefHeight="25.0" prefWidth="50.0" text="+10s">
                            <HBox.margin>
                               <Insets right="7.0" top="7.0" />
                            </HBox.margin>
@@ -85,7 +84,7 @@
                               <Insets left="7.0" />
                            </padding>
                         </Button>
-                        <Slider prefHeight="21.0" prefWidth="115.0">
+                        <Slider fx:id="volume" onDragDetected="#setVolume" prefHeight="21.0" prefWidth="115.0">
                            <padding>
                               <Insets right="7.0" top="7.0" />
                            </padding>
