@@ -1,5 +1,7 @@
 package com.example.mediaplayer;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ChangeListener;
@@ -9,6 +11,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.stage.FileChooser;
@@ -27,6 +32,8 @@ public class MediaController {
 
     @FXML
     MediaView mediaView;
+    @FXML
+    TextField searchText;
     public void chooseFile(ActionEvent event){
         FileChooser fileChooser =new FileChooser();
         File file = fileChooser.showOpenDialog(null);
@@ -59,6 +66,17 @@ public class MediaController {
                     mediaPlayer.seek(Duration.seconds(slider.getValue()));
                 }
             });
+            mediaPlayer.setOnReady(()->{
+                Duration total=media.getDuration();
+                slider.setMax(total.toSeconds());
+            });
+            volume.setValue(mediaPlayer.getVolume()*100);
+            volume.valueProperty().addListener(new InvalidationListener() {
+                @Override
+                public void invalidated(Observable observable) {
+                    mediaPlayer.setVolume(volume.getValue()/100);
+                }
+            });
             mediaPlayer.play();
         }
     }
@@ -86,7 +104,11 @@ public class MediaController {
     public void goBack10Sec(){
         mediaPlayer.seek(mediaPlayer.getCurrentTime().add(Duration.seconds(-10)));
     }
-    public void setVolume(){
-        mediaPlayer.setVolume(volume.getValue());
+
+    public void printText(ActionEvent event) {
+        String text= searchText.getText();
+        if(text!=null){
+            System.out.println(text);
+        }
     }
 }
